@@ -32,8 +32,8 @@ M.generateFrontMatter = function()
     local input = vim.api.nvim_buf_get_lines(0, 0, 1, true)[1] or "Example Title"
 
     -- prepare data
-    local title = M.formatTitle({ input = input })
-    local slug = M.formatSlug({ input = input })
+    local title = M.formatTitle(input)
+    local slug = M.formatSlug(input)
     local date = vim.fn.strftime("%Y-%m-%dT%H-%M-%S")
 
     -- write to top of buffer
