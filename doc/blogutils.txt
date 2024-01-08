@@ -1,0 +1,40 @@
+================================================================================
+                                                              *blogutils.nvim*
+
+This plugin provides some help functions for writing blog posts, such as
+formatting text, and generating frontmatter.
+
+Note: all text formatting relies on the utility `textcase` being installed.
+You can find that at: https://github.com/chrishannah/textcase-cli
+
+                                                     *blogutils.formatTitle()*
+blogutils.formatTitle({input})
+
+    Uses `textcase` to format the given {input} into AP title case.
+
+    >
+        blogutils.formatTitle("this is a title")
+<
+
+                                                        *blogutils.formatSlug()*
+blogutils.formatSlug({input})
+
+    Uses `textcase` to format the given {input} into a hyphen-separated slug.
+
+    >
+        blogutils.formatTitle("this is a title")
+<
+
+                                             *blogutils.generateFrontMatter()*
+blogutils.generateFrontMatter()
+
+    Treats the first line of the current buffer as the input text used for the
+    title, which it then uses with `textcase` to generate a title and slug,
+    along with the current date to insert YAML frontmatter at the start of the
+    current buffer.
+
+    >
+    blogutils.generateFrontMatter()
+<
+
+vim:tw=78:ts=8:ft=help:norl:
