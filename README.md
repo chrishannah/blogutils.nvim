@@ -9,8 +9,8 @@ generation.
 
 There are two functions to format text:
 
-- `blogutil.formatTitle(input)` - Format input as AP Title Case.
-- `blogutil.formatSlug(input)` - Format input as a slug.
+- `blogutils.formatTitle(input)` - Format input as AP Title Case.
+- `blogutils.formatSlug(input)` - Format input as a slug.
 
 ## Frontmatter
 
@@ -36,6 +36,6 @@ categories: []
 ```
 
 To use the frontmatter generation, you just need to set a keymap for
-`blogutil.generateFrontMatter()`.
+`blogutils.generateFrontMatter()`.
 
 [tcc]: https://github.com/chrishannah/textcase-cli
