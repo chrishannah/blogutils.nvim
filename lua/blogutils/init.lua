@@ -33,19 +33,17 @@ M.generateFrontMatter = function()
 
     -- build frontmatter data
     local fm = {}
-    fm[0] = "---"
-    fm[1] = "date: " .. vim.fn.strftime("%Y-%m-%dT%H:%M:%S")
-    fm[2] = "categories: []"
+    fm[1] = "---"
+    fm[2] = "date: " .. vim.fn.strftime("%Y-%m-%dT%H:%M:%S")
+    fm[3] = "categories: []"
     if #input == 0 then
-        fm[3] = "slug: " .. vim.fn.strftime("%Y-%m-%d-%H%M")
-        fm[4] = "---"
-    else
-        fm[3] = "slug: " .. M.formatSlug(input)
-        fm[4] = "title: " .. M.formatTitle(input)
+        fm[4] = "slug: " .. vim.fn.strftime("%Y-%m-%d-%H%M")
         fm[5] = "---"
+    else
+        fm[4] = "slug: " .. M.formatSlug(input)
+        fm[5] = "title: " .. M.formatTitle(input)
+        fm[6] = "---"
     end
-
-    vim.print(fm)
 
     -- insert data into buffer
     vim.api.nvim_buf_set_lines(0, 0, 1, true, fm)
