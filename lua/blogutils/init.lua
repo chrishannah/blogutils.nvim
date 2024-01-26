@@ -32,8 +32,9 @@ M.generateFrontMatter = function()
     local input = vim.api.nvim_buf_get_lines(0, 0, 1, true)[1] or "Example Title"
 
     -- build frontmatter data
-    local fm = {}
-    fm[0] = "---"
+    local fm = {
+        "---"
+    }
     fm[1] = "date: " .. vim.fn.strftime("%Y-%m-%dT%H:%M:%S")
     fm[2] = "categories: []"
     if #input == 0 then
