@@ -46,6 +46,8 @@ M.generateFrontMatter = function()
         fm[5] = "---"
     end
 
+    print(vim.inspect(fm))
+
     -- insert data into buffer
     vim.api.nvim_buf_set_lines(0, 0, 1, true, fm)
 end
