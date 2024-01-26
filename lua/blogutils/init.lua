@@ -31,12 +31,16 @@ M.generateFrontMatter = function()
     -- get first row of file as input
     local input = vim.api.nvim_buf_get_lines(0, 0, 1, true)[1] or "Example Title"
 
-    -- prepare data
-    local title = M.formatTitle(input)
-    local slug = M.formatSlug(input)
+    -- build frontmatter data
     local date = vim.fn.strftime("%Y-%m-%dT%H:%M:%S")
+    local slug = vim.fn.strftime("%Y-%m-%d-%H%M")
+    local title = ""
+    if #input > 0 then
+        slug = M.formatSlug(input)
+        title = M.formatTitle(input)
+    end
 
-    -- write to top of buffer
+    -- insert data into buffer
     vim.api.nvim_buf_set_lines(0, 0, 1, true, {
         '---',
         'title: ' .. title,

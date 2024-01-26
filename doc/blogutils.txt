@@ -33,6 +33,9 @@ blogutils.generateFrontMatter()
     along with the current date to insert YAML frontmatter at the start of the
     current buffer.
 
+    If there is no text to use as the title, the title field will be omitted,
+    and the slug will be derived from the current date and time.
+
     >
     blogutils.generateFrontMatter()
 <
