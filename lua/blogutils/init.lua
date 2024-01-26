@@ -33,7 +33,7 @@ M.generateFrontMatter = function()
 
     -- build frontmatter data
     local date = vim.fn.strftime("%Y-%m-%dT%H:%M:%S")
-    local slug = vim.fn.strftime("%Y-%m-%d-%H%M")
+    local slug = vim.fn.strftime("%Y-%m-%d-%H-%M")
     local title = ""
     if #input > 0 then
         slug = M.formatSlug(input)
